@@ -33,7 +33,7 @@ $today = \Carbon\Carbon::now()->format('F j, Y');
             <div class="card-header">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="card-title d-inline-block">Todays's Orders</div>
+                        <div class="card-title d-inline-block">Today's Orders</div>
                         <div class="date-text float-lg-right">{{ $today }}</div>
                         <div class="float-lg-right mx-4">
                             @if($yesterdaysOrders)
