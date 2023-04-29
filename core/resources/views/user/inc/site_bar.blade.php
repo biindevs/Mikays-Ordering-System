@@ -5,9 +5,9 @@
             <li><a class="
                 @if(request()->path() == 'user/orders') active
                 @elseif(request()->is('user/order/*')) active
-                 @endif"
-                 href="{{route('user-orders')}}">{{__('My Orders')}} </a></li>
-         
+                @endif"
+                    href="{{route('user-orders')}}">{{__('My Orders')}} </a></li>
+
             <li><a class=" @if(request()->path() == 'user/profile') active @endif" href="{{route('user-profile')}}">{{__('Edit Profile')}} </a></li>
             <li><a class=" @if(request()->path() == 'user/shipping/details') active @endif" href="{{route('shpping-details')}}">{{__('Shipping Details')}} </a></li>
             <li><a class=" @if(request()->path() == 'user/billing/details') active @endif" href="{{route('billing-details')}}">{{__('Billing Details')}} </a></li>

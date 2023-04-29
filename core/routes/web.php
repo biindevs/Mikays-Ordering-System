@@ -16,9 +16,7 @@ Route::get('/offline','Front\FrontendController@offline');
 
 Route::middleware(['setlang'])->group(function () {
     Route::get('/', 'Front\FrontendController@index')->name('front.index');
-    Route::get('/callwaiter', 'Front\FrontendController@callwaiter')->name('front.callwaiter');
-    Route::get('/reservation/form', 'Front\FrontendController@reservationForm')->name('front.reservation');
-    Route::post('/table/book', 'Front\FrontendController@tableBook')->name('front.table.book');
+
 
     Route::get('/blogs', 'Front\FrontendController@blogs')->name('front.blogs');
     Route::get('/blog-details/{slug}/{id}', 'Front\FrontendController@blogdetails')->name('front.blogdetails');
@@ -59,8 +57,6 @@ Route::middleware(['setlang'])->group(function () {
 
 });
 
-
-Route::get('/teams', 'Front\FrontendController@teams')->name('front.teams');
 
 // review
 Route::post('product/review/submit', 'Front\ReviewController@reviewsubmit')->name('product.review.submit');

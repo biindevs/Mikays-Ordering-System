@@ -401,7 +401,7 @@
     {{-- Cookie alert dialog end --}}
 
     {{-- START: Call Waiter Modal --}}
-    <div class="modal fade" id="callWaiterModal" tabindex="-1" role="dialog" aria-labelledby="callWaiterModalTitle"
+    {{-- <div class="modal fade" id="callWaiterModal" tabindex="-1" role="dialog" aria-labelledby="callWaiterModalTitle"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -432,7 +432,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     {{-- END: Call Waiter Modal --}}
 
 
