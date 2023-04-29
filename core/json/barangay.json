@@ -1,0 +1,396 @@
+{
+    "barangays": [
+        {
+            "name": "Arena Blanco",
+            "value": "Arena Blanco"
+        },
+        {
+            "name": "Ayala",
+            "value": "Ayala"
+        },
+        {
+            "name": "Baliwasan",
+            "value": "Baliwasan"
+        },
+        {
+            "name": "Baluno",
+            "value": "Baluno"
+        },
+        {
+            "name": "Barangay Zone I",
+            "value": "Barangay Zone I"
+        },
+        {
+            "name": "Barangay Zone II",
+            "value": "Barangay Zone II"
+        },
+        {
+            "name": "Barangay Zone III",
+            "value": "Barangay Zone III"
+        },
+        {
+            "name": "Barangay Zone IV",
+            "value": "Barangay Zone IV"
+        },
+        {
+            "name": "Boalan",
+            "value": "Boalan"
+        },
+        {
+            "name": "Bolong",
+            "value": "Bolong"
+        },
+        {
+            "name": "Buenavista",
+            "value": "Buenavista"
+        },
+        {
+            "name": "Bunguiao",
+            "value": "Bunguiao"
+        },
+        {
+            "name": "Busay (Sacol Island)",
+            "value": "Busay (Sacol Island)"
+        },
+        {
+            "name": "Cabaluay",
+            "value": "Cabaluay"
+        },
+        {
+            "name": "Cabatangan",
+            "value": "Cabatangan"
+        },
+        {
+            "name": "Cacao",
+            "value": "Cacao"
+        },
+        {
+            "name": "Calabasa",
+            "value": "Calabasa"
+        },
+        {
+            "name": "Calarian",
+            "value": "Calarian"
+        },
+        {
+            "name": "Camino Nuevo",
+            "value": "Camino Nuevo"
+        },
+        {
+            "name": "Campo Islam",
+            "value": "Campo Islam"
+        },
+        {
+            "name": "Canelar",
+            "value": "Canelar"
+        },
+        {
+            "name": "Capisan",
+            "value": "Capisan"
+        },
+        {
+            "name": "Cawit",
+            "value": "Cawit"
+        },
+        {
+            "name": "Culianan",
+            "value": "Culianan"
+        },
+        {
+            "name": "Curuan",
+            "value": "Curuan"
+        },
+        {
+            "name": "Dita",
+            "value": "Dita"
+        },
+        {
+            "name": "Divisoria",
+            "value": "Divisoria"
+        },
+        {
+            "name": "Dulian (Upper Bunguiao)",
+            "value": "Dulian (Upper Bunguiao)"
+        },
+        {
+            "name": "Dulian (Upper Pasonanca)",
+            "value": "Dulian (Upper Pasonanca)"
+        },
+        {
+            "name": "Guisao",
+            "value": "Guisao"
+        },
+        {
+            "name": "Guiwan",
+            "value": "Guiwan"
+        },
+        {
+            "name": "Kasanyangan",
+            "value": "Kasanyangan"
+        },
+        {
+            "name": "Labuan",
+            "value": "Labuan"
+        },
+        {
+            "name": "Lamisahan",
+            "value": "Lamisahan"
+        },
+        {
+            "name": "Landang Gua",
+            "value": "Landang Gua"
+        },
+        {
+            "name": "Landang Laum",
+            "value": "Landang Laum"
+        },
+        {
+            "name": "Lanzones",
+            "value": "Lanzones"
+        },
+        {
+            "name": "Lapakan",
+            "value": "Lapakan"
+        },
+        {
+            "name": "La Paz",
+            "value": "La Paz"
+        },
+        {
+            "name": "Latuan (Curuan)",
+            "value": "Latuan (Curuan)"
+        },
+        {
+            "name": "Licomo",
+            "value": "Licomo"
+        },
+        {
+            "name": "Limaong",
+            "value": "Limaong"
+        },
+        {
+            "name": "Limpapa",
+            "value": "Limpapa"
+        },
+        {
+            "name": "Lubigan",
+            "value": "Lubigan"
+        },
+        {
+            "name": "Lumayang",
+            "value": "Lumayang"
+        },
+        {
+            "name": "Lumbangan",
+            "value": "Lumbangan"
+        },
+        {
+            "name": "Lunzuran",
+            "value": "Lunzuran"
+        },
+        {
+            "name": "Maasin",
+            "value": "Maasin"
+        },
+        {
+            "name": "Malagutay",
+            "value": "Malagutay"
+        },
+        {
+            "name": "Mampang",
+            "value": "Mampang"
+        },
+        {
+            "name": "Manalipa",
+            "value": "Manalipa"
+        },
+        {
+            "name": "Mangusu",
+            "value": "Mangusu"
+        },
+        {
+            "name": "Manicahan",
+            "value": "Manicahan"
+        },
+        {
+            "name": "Mariki",
+            "value": "Mariki"
+        },
+        {
+            "name": "Mercedes",
+            "value": "Mercedes"
+        },
+        {
+            "name": "Muti",
+            "value": "Muti"
+        },
+        {
+            "name": "Pamucutan",
+            "value": "Pamucutan"
+        },
+        {
+            "name": "Pangapuyan",
+            "value": "Pangapuyan"
+        },
+        {
+            "name": "Panubigan",
+            "value": "Panubigan"
+        },
+        {
+            "name": "Pasilmanta (Sacol Island)",
+            "value": "Pasilmanta (Sacol Island)"
+        },
+        {
+            "name": "Pasobolong",
+            "value": "Pasobolong"
+        },
+        {
+            "name": "Pasonanca",
+            "value": "Pasonanca"
+        },
+        {
+            "name": "Patalon",
+            "value": "Patalon"
+        },
+        {
+            "name": "Putik",
+            "value": "Putik"
+        },
+        {
+            "name": "Quiniput",
+            "value": "Quiniput"
+        },
+        {
+            "name": "Recodo",
+            "value": "Recodo"
+        },
+        {
+            "name": "Rio Hondo",
+            "value": "Rio Hondo"
+        },
+        {
+            "name": "Salaan",
+            "value": "Salaan"
+        },
+        {
+            "name": "Sangali",
+            "value": "Sangali"
+        },
+        {
+            "name": "San Jose Cawa-Cawa",
+            "value": "San Jose Cawa-Cawa"
+        },
+        {
+            "name": "San Jose Gusu",
+            "value": "San Jose Gusu"
+        },
+        {
+            "name": "San Roque",
+            "value": "San Roque"
+        },
+        {
+            "name": "Santa Barbara",
+            "value": "Santa Barbara"
+        },
+        {
+            "name": "Santa Catalina",
+            "value": "Santa Catalina"
+        },
+        {
+            "name": "Santa Maria",
+            "value": "Santa Maria"
+        },
+        {
+            "name": "Santo Niño",
+            "value": "Santo Niño"
+        },
+        {
+            "name": "Sibulao (Caruan)",
+            "value": "Sibulao (Caruan)"
+        },
+        {
+            "name": "Sinubung",
+            "value": "Sinubung"
+        },
+        {
+            "name": "Sinunoc",
+            "value": "Sinunoc"
+        },
+        {
+            "name": "Tagasilay",
+            "value": "Tagasilay"
+        },
+        {
+            "name": "Taguiti",
+            "value": "Taguiti"
+        },
+        {
+            "name": "Talabaan",
+            "value": "Talabaan"
+        },
+        {
+            "name": "Talisayan",
+            "value": "Talisayan"
+        },
+        {
+            "name": "Talon-Talon",
+            "value": "Talon-Talon"
+        },
+        {
+            "name": "Taluksangay",
+            "value": "Taluksangay"
+        },
+        {
+            "name": "Tetuan",
+            "value": "Tetuan"
+        },
+        {
+            "name": "Tictapul",
+            "value": "Tictapul"
+        },
+        {
+            "name": "Tigbalabag",
+            "value": "Tigbalabag"
+        },
+        {
+            "name": "Tigtabon",
+            "value": "Tigtabon"
+        },
+        {
+            "name": "Tolosa",
+            "value": "Tolosa"
+        },
+        {
+            "name": "Tugbungan",
+            "value": "Tugbungan"
+        },
+        {
+            "name": "Tulungatung",
+            "value": "Tulungatung"
+        },
+        {
+            "name": "Tumaga",
+            "value": "Tumaga"
+        },
+        {
+            "name": "Tumalutab",
+            "value": "Tumalutab"
+        },
+        {
+            "name": "Tumitus",
+            "value": "Tumitus"
+        },
+        {
+            "name": "Victoria",
+            "value": "Victoria"
+        },
+        {
+            "name": "Vitali",
+            "value": "Vitali"
+        },
+        {
+            "name": "Zambowood",
+            "value": "Zambowood"
+        }
+    ]
+}

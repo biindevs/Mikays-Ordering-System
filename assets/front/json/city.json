@@ -1,0 +1,112 @@
+{
+    "cities": [
+        {
+            "name": "Aurora",
+            "value": "aurora"
+        },
+        {
+            "name": "Bayog",
+            "value": "bayog"
+        },
+        {
+            "name": "Dimataling",
+            "value": "dimataling"
+        },
+        {
+            "name": "Dinas",
+            "value": "dinas"
+        },
+        {
+            "name": "Dumalinao",
+            "value": "dumalinao"
+        },
+        {
+            "name": "Dumingag",
+            "value": "dumingag"
+        },
+        {
+            "name": "Guipos",
+            "value": "guipos"
+        },
+        {
+            "name": "Josefina",
+            "value": "josefina"
+        },
+        {
+            "name": "Kumalarang",
+            "value": "kumalarang"
+        },
+        {
+            "name": "Labangan",
+            "value": "labangan"
+        },
+        {
+            "name": "Lakewood",
+            "value": "lakewood"
+        },
+        {
+            "name": "Lapuyan",
+            "value": "lapuyan"
+        },
+        {
+            "name": "Mahayag",
+            "value": "mahayag"
+        },
+        {
+            "name": "Margosatubig",
+            "value": "margosatubig"
+        },
+        {
+            "name": "Midsalip",
+            "value": "midsalip"
+        },
+        {
+            "name": "Molave",
+            "value": "molave"
+        },
+        {
+            "name": "Pitogo",
+            "value": "pitogo"
+        },
+        {
+            "name": "Ramon Magsaysay (Liargo)",
+            "value": "ramon_magsaysay"
+        },
+        {
+            "name": "San Miguel",
+            "value": "san_miguel"
+        },
+        {
+            "name": "San Pablo",
+            "value": "san_pablo"
+        },
+        {
+            "name": "Sominot (Don Mariano Marcos)",
+            "value": "sominot"
+        },
+        {
+            "name": "Tabina",
+            "value": "tabina"
+        },
+        {
+            "name": "Tambulig",
+            "value": "tambulig"
+        },
+        {
+            "name": "Tigbao",
+            "value": "tigbao"
+        },
+        {
+            "name": "Tukuran",
+            "value": "tukuran"
+        },
+        {
+            "name": "Vincenzo A. Sagun",
+            "value": "vincenzo_a_sagun"
+        },
+        {
+            "name": "Zamboanga City",
+            "value": "zamboanga_city"
+        }
+    ]
+}
