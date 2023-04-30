@@ -19,7 +19,7 @@
                 <div id="variants">
                     {{-- All variants will be appended here by jquery --}}
                 </div>
-                <div class="addon-label mt-3">
+                <div class="addon-label mt-3 d-none">
                     <h5 @if (request()->is('admin/*')) class="text-white" @endif>{{ __("Select Add On's") }}
                         ({{ __('Optional') }})</h5>
                 </div>
