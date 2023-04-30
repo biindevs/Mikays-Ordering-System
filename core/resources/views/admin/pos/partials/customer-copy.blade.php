@@ -72,6 +72,10 @@
             top: 46px;
             left: 2px;
         }
+        .nothing-follows{
+            text-align: center;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -94,7 +98,6 @@
 
         @if (!empty($cart))
         <div id="cartTable">
-
             @foreach ($cart as $key => $item)
             @php
             $id = $item["id"];
@@ -103,7 +106,7 @@
             <div class="cart-item">
                 <div class="item">
                     <div class="qty">
-                        {{$item['qty']}} X
+                        {{$item['qty']}} X {{number_format((float)$item['product_price'], 2)}}
                     </div>
                     <div class="item-name">
                         <p class="text-white">{{convertUtf8($item['name'])}}</p>
@@ -143,7 +146,6 @@
                 </div>
             </div>
             @endforeach
-
         </div>
 
         <div class="order-summary">
@@ -178,6 +180,9 @@
                     {{posCartSubTotal() + posTax() + posShipping()}}
                     {{$be->base_currency_text_position == 'right' ? $be->base_currency_text : ''}}
                 </div>
+            </div>
+            <div class="nothing-follows">
+                -----nothing follows-----
             </div>
         </div>
 
