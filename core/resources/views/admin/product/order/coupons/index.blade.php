@@ -52,7 +52,7 @@
                         <th scope="col">Discount</th>
                         <th scope="col">Status</th>
                         <th scope="col">Quantity</th>
-                        <th scope="col">Usage Limit</th>
+                        <th scope="col">Maximum Usage</th>
                         <th scope="col">Created</th>
                         <th scope="col">Actions</th>
                       </tr>
@@ -81,7 +81,7 @@
                                     @endif
                                 </td>
                                 <td>{{$coupon->quantity}}</td>
-                                <td>{{$coupon->usage_limit}}</td>
+                                <td>{{$coupon->maximum_usage}}</td>
                                 <td>
                                   @php
                                       $created = Carbon\Carbon::parse($coupon->created_at);
@@ -194,9 +194,9 @@
               <div class="col-lg-6">
                   <div class="form-group">
                     <label for="">Limit*</label>
-                    <input type="text" class="form-control" name="usage_limit" value="" placeholder="Enter the usage limit" autocomplete="off">
-                    <p class="mb-0 text-warning">Specify the usage limit for this coupon or the number of times a customer can redeem it.</p>
-                    <p id="errusage_limit" class="mb-0 text-danger em"></p>
+                    <input type="text" class="form-control" name="maximum_usage" value="" placeholder="Enter the usage limit" autocomplete="off">
+                    <p class="mb-0 text-warning">If the limit is set to 1, the user can only use the coupon once.</p>
+                    <p id="errmaximum_usage" class="mb-0 text-danger em"></p>
                   </div>
               </div>
           </div>

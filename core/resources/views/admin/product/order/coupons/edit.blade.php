@@ -112,9 +112,9 @@
                       <div class="col-lg-6">
                           <div class="form-group">
                             <label for="">Limit*</label>
-                            <input type="text" class="form-control" name="usage_limit" value="{{$coupon->usage_limit}}" placeholder="Enter the usage limit" autocomplete="off">
-                            <p class="mb-0 text-warning">Specify the usage limit for this coupon or the number of times a customer can redeem it.</p>
-                            <p id="errusage_limit" class="mb-0 text-danger em"></p>
+                            <input type="text" class="form-control" name="maximum_usage" value="{{$coupon->maximum_usage}}" placeholder="Enter the usage limit" autocomplete="off">
+                            <p class="mb-0 text-warning">If the limit is set to 1, the user can only use the coupon once.</p>
+                            <p id="errmaximum_usage" class="mb-0 text-danger em"></p>
                           </div>
                       </div>
 

@@ -15,6 +15,6 @@ class Coupon extends Model
         'end_date',
         'minimum_spend',
         'quantity',
-        'usage_limit',
+        'maximum_usage',
     ];
 }
