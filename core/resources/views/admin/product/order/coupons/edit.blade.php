@@ -102,6 +102,23 @@
                     </div>
 
                     <div class="row no-gutters">
+                      <div class="col-lg-6">
+                          <div class="form-group">
+                            <label for="">Quantity *</label>
+                            <input type="text" class="form-control" name="quantity" value="{{$coupon->quantity}}" placeholder="Enter the quantity" autocomplete="off">
+                            <p id="errquantity" class="mb-0 text-danger em"></p>
+                          </div>
+                      </div>
+                      <div class="col-lg-6">
+                          <div class="form-group">
+                            <label for="">Limit*</label>
+                            <input type="text" class="form-control" name="usage_limit" value="{{$coupon->usage_limit}}" placeholder="Enter the usage limit" autocomplete="off">
+                            <p class="mb-0 text-warning">Specify the usage limit for this coupon, including the number of times a customer can redeem it.</p>
+                            <p id="errusage_limit" class="mb-0 text-danger em"></p>
+                          </div>
+                      </div>
+
+                    <div class="row no-gutters">
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="">Minimum Spend ({{$be->base_currency_text}}) *</label>
