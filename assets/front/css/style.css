@@ -8010,9 +8010,9 @@ p.gateway-desc {
 }
 
 
-/*** 
+/***
 =============================================
-   Cart area  style
+    Cart area  style
 =============================================
 ***/
 
@@ -8308,7 +8308,7 @@ p.gateway-desc {
 }
 
 .total-item-info li span {
-    font-size: 13px;
+    font-size: 20px;
     font-weight: 500;
     text-transform: uppercase;
     color: #282828;

@@ -1,8 +1,8 @@
 @extends('front.layout')
 
 @section('pagename')
- -
- {{__('Product')}}
+    -
+    {{__('Product')}}
 @endsection
 
 
@@ -14,7 +14,7 @@
 @section('content')
 
 
-  <section class="page-title-area d-flex align-items-center lazy" data-bg="{{asset('assets/front/img/' . $bs->breadcrumb)}}" style="background-size: cover;">
+<section class="page-title-area d-flex align-items-center lazy" data-bg="{{asset('assets/front/img/' . $bs->breadcrumb)}}" style="background-size: cover;">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -52,8 +52,15 @@
                                 }
                             }
                             @endphp
-                            <li><span>{{__('Your Cart')}}:</span> <span class="cart-item-view">{{$cart ? $countitem : 0}}</span> {{__('Items')}}</li>
-                            <li style="direction: ltr;"><span>{{__('Total')}} :</span> {{$be->base_currency_symbol_position == 'left' ? $be->base_currency_symbol : ''}} <span class="cart-total-view">{{$cartTotal}}</span> {{$be->base_currency_symbol_position == 'right' ? $be->base_currency_symbol : ''}}</li>
+                            <li>
+                                <span>{{__('Your Cart')}}:</span> <span class="cart-item-view">{{$cart ? $countitem : 0}}</span> {{__('Items')}}
+                            </li>
+                            <li style="direction: ltr;">
+                                <span>{{__('Total')}} :</span>
+                                {{$be->base_currency_symbol_position == 'left' ? $be->base_currency_symbol : ''}}
+                                <span class="cart-total-view">{{number_format((float)$cartTotal, 2)}}</span>
+                                {{$be->base_currency_symbol_position == 'right' ? $be->base_currency_symbol : ''}}
+                            </li>
                         </ul>
 
                     @endif
@@ -103,7 +110,7 @@
                                                         @if (!$loop->last)
                                                         ,
                                                         @endif
-                                                    @endforeach    
+                                                    @endforeach
                                                 </p>
                                             @endif
                                             @if (!empty($item["addons"]))
@@ -133,11 +140,10 @@
                                     <td class="price cart_price">
                                         <p>
                                             <strong>{{__("Product")}}:</strong>
-                                            {{$be->base_currency_symbol_position == 'left' ? $be->base_currency_symbol : ''}}<span>{{$item['product_price'] * $item["qty"]}}</span>{{$be->base_currency_symbol_position == 'right' ? $be->base_currency_symbol : ''}}
+                                            {{$be->base_currency_symbol_position == 'left' ? $be->base_currency_symbol : ''}}<span>{{number_format((float)($item['product_price'] * $item["qty"]), 2)}}</span>{{$be->base_currency_symbol_position == 'right' ? $be->base_currency_symbol : ''}}
                                         </p>
                                         @if (!empty($item['variations']))
                                             <p>
-
                                                 <strong>{{__("Variation")}}: </strong>
                                                 @php
                                                     $variations = $item['variations'];
@@ -148,7 +154,7 @@
                                                         }
                                                     }
                                                 @endphp
-                                                {{$be->base_currency_symbol_position == 'left' ? $be->base_currency_symbol : ''}}<span>{{$price * $item["qty"]}}</span>{{$be->base_currency_symbol_position == 'right' ? $be->base_currency_symbol : ''}}
+                                                {{$be->base_currency_symbol_position == 'left' ? $be->base_currency_symbol : ''}}<span>{{number_format((float)($price * $item["qty"]), 2)}}</span>{{$be->base_currency_symbol_position == 'right' ? $be->base_currency_symbol : ''}}
                                             </p>
                                         @endif
                                         @if (!empty($item['addons']))
@@ -161,13 +167,13 @@
                                                         $addonTotal += $addon["price"];
                                                     }
                                                 @endphp
-                                                {{$be->base_currency_symbol_position == 'left' ? $be->base_currency_symbol : ''}}<span>{{$addonTotal * $item["qty"]}}</span>{{$be->base_currency_symbol_position == 'right' ? $be->base_currency_symbol : ''}}
+                                                {{$be->base_currency_symbol_position == 'left' ? $be->base_currency_symbol : ''}}<span>{{number_format((float)($addonTotal * $item["qty"]), 2)}}</span>{{$be->base_currency_symbol_position == 'right' ? $be->base_currency_symbol : ''}}
                                             </p>
                                         @endif
                                     </td>
                                     <td class="sub-total">
                                         {{$be->base_currency_symbol_position == 'left' ? $be->base_currency_symbol : ''}}
-                                        {{$item['total']}}
+                                        {{number_format((float)$item['total'], 2)}}
                                         {{$be->base_currency_symbol_position == 'right' ? $be->base_currency_symbol : ''}}
                                     </td>
                                     <td>

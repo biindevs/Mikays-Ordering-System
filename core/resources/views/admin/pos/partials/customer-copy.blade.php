@@ -141,7 +141,7 @@
                 </div>
                 <div class="item-total">
                     {{$be->base_currency_text_position == 'left' ? $be->base_currency_text : ''}}
-                    {{$item['total']}}
+                    {{number_format((float)$item['total'], 2)}}
                     {{$be->base_currency_text_position == 'right' ? $be->base_currency_text : ''}}
                 </div>
             </div>
@@ -153,7 +153,7 @@
                 <div>Subtotal:</div>
                 <div>
                     {{$be->base_currency_text_position == 'left' ? $be->base_currency_text : ''}}
-                    {{posCartSubTotal()}}
+                    {{number_format((float)posCartSubTotal(), 2)}}
                     {{$be->base_currency_text_position == 'right' ? $be->base_currency_text : ''}}
                 </div>
             </div>
@@ -161,7 +161,7 @@
                 <div>Tax:</div>
                 <div>
                     {{$be->base_currency_text_position == 'left' ? $be->base_currency_text : ''}}
-                    {{posTax()}}
+                    {{number_format((float)posTax(), 2)}}
                     {{$be->base_currency_text_position == 'right' ? $be->base_currency_text : ''}}
                 </div>
             </div>
@@ -169,7 +169,7 @@
                 <div>Delivery Charge:</div>
                 <div>
                     {{$be->base_currency_text_position == 'left' ? $be->base_currency_text : ''}}
-                    {{posShipping()}}
+                    {{number_format((float)posShipping(), 2)}}
                     {{$be->base_currency_text_position == 'right' ? $be->base_currency_text : ''}}
                 </div>
             </div>
@@ -177,7 +177,7 @@
                 <div>Total:</div>
                 <div>
                     {{$be->base_currency_text_position == 'left' ? $be->base_currency_text : ''}}
-                    {{posCartSubTotal() + posTax() + posShipping()}}
+                    {{number_format((float)posCartSubTotal() + posTax() + posShipping(), 2)}}
                     {{$be->base_currency_text_position == 'right' ? $be->base_currency_text : ''}}
                 </div>
             </div>
