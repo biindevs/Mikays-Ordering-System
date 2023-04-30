@@ -195,7 +195,7 @@
                   <div class="form-group">
                     <label for="">Limit*</label>
                     <input type="text" class="form-control" name="usage_limit" value="" placeholder="Enter the usage limit" autocomplete="off">
-                    <p class="mb-0 text-warning">Specify the usage limit for this coupon, including the number of times a customer can redeem it.</p>
+                    <p class="mb-0 text-warning">Specify the usage limit for this coupon or the number of times a customer can redeem it.</p>
                     <p id="errusage_limit" class="mb-0 text-danger em"></p>
                   </div>
               </div>
