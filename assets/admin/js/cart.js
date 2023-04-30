@@ -159,39 +159,26 @@ function addToCart(url, variant, qty, addons) {
             } else {
                 $(".addon-label").removeClass('mt-3');
             }
-
-            if (variations != null) {
-                $(".variation-label").removeClass("d-none");
-                let variationLength = Object.keys(variations).length;
-                console.log(variations);
-                // load variations radio button input fields
-                let variants = ``;
-                let iopt = 0;
-                for (var key in variations) {
-                    variants += `<div class="variation-label">
-                        <h5 class='text-capitalize'>${select} ${key.replace("_", " ")} *</h5>
-                    </div>`;
-                    let options = variations[key];
-                    for (let i = 0; i < options.length; i++) {
-                        let formattedPrice = parseFloat(options[i].price).toLocaleString('en', {minimumFractionDigits: 2, maximumFractionDigits: 2});
-                        variants += `<div class="form-check d-flex justify-content-between ${(i == (options.length - 1)) ? 'border-0' : ''}">
-                            <div>
-                                <input class="form-check-input voptions" type="radio" name="${key}_variant" id="voption${iopt}" value="" data-option=${key} data-name="${options[i].name}" data-price="${options[i].price}" ${i == 0 ? 'checked' : ''}>
-                                <label class="form-check-label" for="voption${iopt}">${options[i].name}</label>
-                            </div>
-                            <span>
-                                + ${textPosition == 'left' ? currText : ''} ${formattedPrice} ${textPosition == 'right' ? currText : ''}
-                            </span>
-                        </div>`;
-                        iopt++;
-                    }
+            if (addons != null && addons.length > 0) {
+                $(".addon-label").removeClass("d-none").addClass('mt-3');
+                // load addons checkbox input fields
+                let addonHtml = ``;
+                for (let i = 0; i < addons.length; i++) {
+                    addonHtml += `<div class="form-check d-flex justify-content-between">
+                        <div>
+                            <input class="form-check-input" type="checkbox" name="addons" id="addon${i}" value="${addons[i].name}" data-price="${addons[i].price.toFixed(2)}">
+                            <label class="form-check-label" for="addon${i}">
+                            ${addons[i].name}
+                            </label>
+                        </div>
+                        <span>
+                            + ${textPosition == 'left' ? currText : ''} ${addons[i].price} ${textPosition == 'right' ? currText : ''}
+                        </span>
+                    </div>`
                 }
-                $("#variants").html(variants);
-
-                // add margin top if variations available
-                $(".addon-label").addClass('mt-3');
+                $("#addons").html(addonHtml);
             } else {
-                $(".addon-label").removeClass('mt-3');
+                $(".addon-label").addClass("d-none").removeClass('mt-3');
             }
 
             // set modal price
