@@ -26,6 +26,8 @@ class CouponController extends Controller
             'minimum_spend' => 'nullable|numeric|min:1',
             'start_date' => 'required',
             'end_date' => 'required',
+            'quantity' => 'required|integer|min:1',
+            'usage_limit' => 'required|integer|min:1',
         ];
 
         $validator = Validator::make($request->all(), $rules);
@@ -58,6 +60,8 @@ class CouponController extends Controller
             'minimum_spend' => 'nullable|numeric|min:1',
             'start_date' => 'required',
             'end_date' => 'required',
+            'quantity' => 'required|integer|min:1',
+            'usage_limit' => 'required|integer|min:1',
         ];
 
         $validator = Validator::make($request->all(), $rules);

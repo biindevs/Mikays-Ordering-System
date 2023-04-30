@@ -47,10 +47,12 @@
                   <table class="table table-striped mt-3">
                     <thead>
                       <tr>
-                        <th scope="col">Name</th>
+                        <th scope="col">Coupon Name</th>
                         <th scope="col">Code</th>
                         <th scope="col">Discount</th>
                         <th scope="col">Status</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Usage Limit</th>
                         <th scope="col">Created</th>
                         <th scope="col">Actions</th>
                       </tr>
@@ -78,21 +80,23 @@
                                         @endif
                                     @endif
                                 </td>
+                                <td>{{$coupon->quantity}}</td>
+                                <td>{{$coupon->usage_limit}}</td>
                                 <td>
-                                    @php
-                                        $created = Carbon\Carbon::parse($coupon->created_at);
-                                        $diff = $created->diffInDays($now);
-                                    @endphp
-                                    {{$created->subDays($diff)->diffForHumans()}}
-                                </td>
+                                  @php
+                                      $created = Carbon\Carbon::parse($coupon->created_at);
+                                      $diff = $created->diffInDays($now);
+                                  @endphp
+                                  {{$created->subDays($diff)->diffForHumans()}}
+                              </td>
                                 <td>
-                                    <a href="{{route('admin.coupon.edit', $coupon->id)}}" class="btn btn-warning btn-sm">Edit</a>
-                                    <form class="d-inline-block deleteform" action="{{route('admin.coupon.delete')}}" method="POST">
-                                        @csrf
-                                        <input type="hidden" name="coupon_id" value="{{$coupon->id}}">
-                                        <button type="submit" class="btn btn-danger btn-sm deletebtn">Delete</button>
-                                    </form>
-                                </td>
+                                  <a href="{{route('admin.coupon.edit', $coupon->id)}}" class="btn btn-warning btn-sm">Edit</a>
+                                  <form class="d-inline-block deleteform" action="{{route('admin.coupon.delete')}}" method="POST">
+                                      @csrf
+                                      <input type="hidden" name="coupon_id" value="{{$coupon->id}}">
+                                      <button type="submit" class="btn btn-danger btn-sm deletebtn">Delete</button>
+                                  </form>
+                              </td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -163,7 +167,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="row no-gutters">
                 <div class="col-lg-6">
                     <div class="form-group">
@@ -180,7 +183,23 @@
                     </div>
                 </div>
             </div>
-
+            <div class="row no-gutters">
+              <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="">Quantity *</label>
+                    <input type="text" class="form-control" name="quantity" value="" placeholder="Enter the quantity" autocomplete="off">
+                    <p id="errquantity" class="mb-0 text-danger em"></p>
+                  </div>
+              </div>
+              <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="">Limit*</label>
+                    <input type="text" class="form-control" name="usage_limit" value="" placeholder="Enter the usage limit" autocomplete="off">
+                    <p class="mb-0 text-warning">Specify the usage limit for this coupon, including the number of times a customer can redeem it.</p>
+                    <p id="errusage_limit" class="mb-0 text-danger em"></p>
+                  </div>
+              </div>
+          </div>
             <div class="row no-gutters">
                 <div class="col-lg-6">
                     <div class="form-group">
@@ -191,7 +210,6 @@
                     </div>
                 </div>
             </div>
-
           </form>
         </div>
         <div class="modal-footer">
