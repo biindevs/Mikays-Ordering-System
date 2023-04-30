@@ -193,7 +193,7 @@
                                     <div class="tab-pane fade {{ $key == 0 ? 'show active' : '' }}"
                                         id="{{ $category->slug }}" role="tabpanel"
                                         aria-labelledby="{{ $category->slug }}-tab">
-                                        
+
                                         <div class="button-group filters-button-group">
                                             <button class="button is-checked" data-filter="*" @if ($category->subcategories()->where('is_feature', 1)->count() == 0) style="display:none;" @endif>{{__('All')}}</button>
                                             @foreach ($category->subcategories()->where('is_feature', 1)->get() as $subcat)
@@ -207,8 +207,8 @@
                                             <div class="food-items-loader">
                                                 <img src="{{ asset('assets/admin/img/loader.gif') }}" alt="">
                                             </div>
-                                            {{-- Loader --}}  
-                                            
+                                            {{-- Loader --}}
+
                                             @if ($category->products()->where('is_feature', 1)->where('status', 1)->count() > 0)
                                                 @foreach ($category->products()->where('is_feature', 1)->where('status', 1)->get() as $product)
                                                     <div class="col-lg-6">

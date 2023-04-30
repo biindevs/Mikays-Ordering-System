@@ -117,7 +117,7 @@
                                     @if (!$loop->last)
                                     ,
                                     @endif
-                                @endforeach    
+                                @endforeach
                             </p>
                         @endif
                         @if (!empty($item["addons"]))

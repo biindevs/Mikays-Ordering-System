@@ -60,14 +60,12 @@
                         <div class="tab-content" id="pills-tabContent">
                             @foreach ($categories as $key => $category)
                             <div class="tab-pane fade {{$key == 0 ? 'show active' : ''}}"  id="{{convertUtf8($category->slug)}}" role="tabpanel" aria-labelledby="{{convertUtf8($category->slug)}}-tab">
-                                        
                                 <div class="button-group filters-button-group">
                                     <button class="button is-checked" data-filter="*" @if ($category->subcategories()->count() == 0) style="display: none;" @endif>{{__('All')}}</button>
                                     @foreach ($category->subcategories as $subcat)
                                         <button class="button" data-filter=".sub{{$subcat->id}}">{{$subcat->name}}</button>
                                     @endforeach
                                 </div>
-                                
 
                                 <div class="row justify-content-center">
 
@@ -75,7 +73,7 @@
                                     <div class="food-items-loader">
                                         <img src="{{ asset('assets/admin/img/loader.gif') }}" alt="">
                                     </div>
-                                    {{-- Loader --}}  
+                                    {{-- Loader --}}
 
                                     @if($category->products()->where('status', 1)->count() > 0)
                                     @foreach ($category->products()->where('status', 1)->get() as $product)
@@ -97,24 +95,21 @@
                                                 </div>
                                                 <div class="menu-price-btn">
                                                     <a class="cart-link d-md-none d-block btn mobile"
-                                                    data-product="{{ $product }}"
-                                                    data-href="{{ route('add.cart', $product->id) }}">+</a>
+                                                        data-product="{{ $product }}"
+                                                        data-href="{{ route('add.cart', $product->id) }}">+</a>
                                                     <a class="cart-link d-none d-md-block"
                                                         data-product="{{ $product }}"
                                                         data-href="{{ route('add.cart', $product->id) }}">{{ __('+') }}</a>
-
-                                                    <span>{{$be->base_currency_symbol_position == 'left' ? $be->base_currency_symbol : ''}}{{convertUtf8($product->current_price)}}{{$be->base_currency_symbol_position == 'right' ? $be->base_currency_symbol : ''}}
+                                                    <span>{{$be->base_currency_symbol_position == 'left' ? $be->base_currency_symbol : ''}}{{number_format(convertUtf8($product->current_price), 0, '.', ',')}}{{$be->base_currency_symbol_position == 'right' ? $be->base_currency_symbol : ''}}
                                                     </span>
                                                     @if(convertUtf8($product->previous_price))
-                                                    <del>  {{$be->base_currency_symbol_position == 'left' ? $be->base_currency_symbol : ''}}{{convertUtf8($product->previous_price)}}{{$be->base_currency_symbol_position == 'right' ? $be->base_currency_symbol : ''}}</del>
+                                                    <del>{{$be->base_currency_symbol_position == 'left' ? $be->base_currency_symbol : ''}}{{number_format(convertUtf8($product->previous_price), 0, '.', ',')}}{{$be->base_currency_symbol_position == 'right' ? $be->base_currency_symbol : ''}}</del>
                                                     @endif
                                                 </div>
                                                 @if ($product->is_special == 1)
                                                     <div class="flag flag-2"><span>{{__('Special')}}</span></div>
                                                 @endif
-
                                             </div>
-
                                         </div>
                                     </div>
                                     @endforeach
@@ -175,7 +170,7 @@
                         <div class="tab-content" id="pills-tabContent">
                             @foreach ($categories as $key => $category)
                             <div class="tab-pane fade {{$key == 0 ? 'show active' : ''}}" id="{{convertUtf8($category->slug)}}"  role="tabpanel" aria-labelledby="{{convertUtf8($category->slug)}}-tab">
-                                        
+
                                 <div class="button-group filters-button-group">
                                     <button class="button is-checked" data-filter="*" @if ($category->subcategories()->count() == 0) style="display:none;" @endif>{{__('All')}}</button>
                                     @foreach ($category->subcategories()->get() as $subcat)
@@ -188,8 +183,8 @@
                                     <div class="food-items-loader">
                                         <img src="{{ asset('assets/admin/img/loader.gif') }}" alt="">
                                     </div>
-                                    {{-- Loader --}}  
-                                    
+                                    {{-- Loader --}}
+
                                     @if($category->products()->where('status', 1)->count() > 0)
                                     @foreach ($category->products()->where('status', 1)->get() as $product)
                                     <div class="single-menu-item mt-30 sub{{$product->subcategory_id}}">
