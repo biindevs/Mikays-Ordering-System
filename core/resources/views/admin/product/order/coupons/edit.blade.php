@@ -106,6 +106,7 @@
                           <div class="form-group">
                             <label for="">Quantity *</label>
                             <input type="text" class="form-control" name="quantity" value="{{$coupon->quantity}}" placeholder="Enter the quantity" autocomplete="off">
+                            <p class="mb-0 text-warning">If the quantity is set to 1, the coupon can only be redeemed once.</p>
                             <p id="errquantity" class="mb-0 text-danger em"></p>
                           </div>
                       </div>
