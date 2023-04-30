@@ -36,14 +36,14 @@
                             @csrf
                             <div class="form-group p-0 pb-2">
                                 <div class="ui-widget">
-                                    <label for="">Customer Phone</label>
+                                    <label for="">Customer Phone *</label>
                                     <input class="form-control" type="text" name="customer_phone" placeholder="Customer Phone Number" value="{{old('customer_phone')}}" onchange="loadCustomerName(this.value)">
                                     {{-- <p class="text-warning mb-0">Use <strong>Country Code</strong> in phone number</p> --}}
                                 </div>
                             </div>
                             <div class="form-group p-0 pb-2">
                                 <div class="ui-widget">
-                                    <label for="">Customer Name</label>
+                                    <label for="">Customer Name *</label>
                                     <input class="form-control" name="customer_name" type="text" placeholder="Customer Name" value="{{old('customer_name')}}" disabled>
                                     <small class="text-warning"><strong>Enter customer phone first.</strong></small>
                                 </div>
@@ -121,7 +121,7 @@
                                                     <div class="form-check p-0 pl-4">
                                                         <input class="form-check-input" type="radio" data="{{!empty($scharge->free_delivery_amount) && (posCartSubTotal() >= $scharge->free_delivery_amount) ? 0 : $scharge->charge}}" name="shipping_charge" id="scharge{{$scharge->id}}" value="{{$scharge->id}}" {{$loop->first ? 'checked' : ''}} data-free_delivery_amount="{{$scharge->free_delivery_amount}}">
                                                         <label class="form-check-label mb-0" for="scharge{{$scharge->id}}">{{$scharge->title}}</label>
-                                                        +
+
                                                         <strong>
                                                             {{$be->base_currency_symbol_position == 'left' ? $be->base_currency_symbol : ''}}{{$scharge->charge}}{{$be->base_currency_symbol_position == 'right' ? $be->base_currency_symbol : ''}}
                                                         </strong>
@@ -217,10 +217,9 @@
                                                             @if (!$loop->last)
                                                             ,
                                                             @endif
-                                                        @endforeach    
+                                                        @endforeach
                                                     </p>
                                                 @endif
-                                                
                                                 @if (!empty($item["addons"]))
                                                 <p>
                                                     <strong class="text-white">{{__("Add On's")}}:</strong>
@@ -253,7 +252,7 @@
                                                 </div>
                                             </td>
                                             <td width="10%">
-                                                {{$item['total']}}
+                                                {{number_format((float)$item['total'], 2)}}
                                             </td>
                                         </tr>
                                         @endforeach
@@ -265,25 +264,23 @@
                                     Subtotal
                                     <span>
                                         {{$be->base_currency_symbol_position == 'left' ? $be->base_currency_symbol : ''}}
-                                        <span id="subtotal">{{posCartSubTotal()}}</span>
+                                        <span id="subtotal">{{number_format((float)posCartSubTotal(), 2)}}</span>
                                         {{$be->base_currency_symbol_position == 'right' ? $be->base_currency_symbol : ''}}
                                     </span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
                                     Tax
                                     <span>
-                                        +
                                         {{$be->base_currency_symbol_position == 'left' ? $be->base_currency_symbol : ''}}
-                                        <span id="tax">{{posTax()}}</span>
+                                        <span id="tax">{{number_format((float)posTax(), 2)}}</span>
                                         {{$be->base_currency_symbol_position == 'right' ? $be->base_currency_symbol : ''}}
                                     </span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
                                     Shipping Charge
                                     <span>
-                                        +
                                         {{$be->base_currency_symbol_position == 'left' ? $be->base_currency_symbol : ''}}
-                                        <span id="shipping">{{posShipping()}}</span>
+                                        <span id="shipping">{{number_format((float)posShipping(), 2)}}</span>
                                         {{$be->base_currency_symbol_position == 'right' ? $be->base_currency_symbol : ''}}
                                     </span>
                                 </li>
@@ -291,7 +288,7 @@
                                     <strong>Total</strong>
                                     <span>
                                         {{$be->base_currency_symbol_position == 'left' ? $be->base_currency_symbol : ''}}
-                                        <span class="grandTotal">{{posCartSubTotal() + posTax() + posShipping()}}</span>
+                                        <span class="grandTotal">{{number_format((float)posCartSubTotal() + posTax() + posShipping(), 2)}}</span>
                                         {{$be->base_currency_symbol_position == 'right' ? $be->base_currency_symbol : ''}}
                                     </span>
                                 </li>

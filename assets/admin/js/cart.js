@@ -50,8 +50,10 @@ function totalPrice(qty) {
     total = total.toFixed(2) * parseInt(qty);
 
     if ($("#productPrice").length > 0) {
-        $("#productPrice").html(total.toFixed(2));
+        const formattedTotal = new Intl.NumberFormat('en-US', { style: 'decimal', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(total);
+        $("#productPrice").html(formattedTotal);
     }
+
 
     return total.toFixed(2);
 }
@@ -97,7 +99,7 @@ function addToCart(url, variant, qty, addons) {
 
 (function($) {
     "use strict";
-    
+
     // ============== add to cart js start =======================//
 
     $(".cart-link").on('click', function (e) {
@@ -108,7 +110,7 @@ function addToCart(url, variant, qty, addons) {
         // set product current price
         pprice = product.current_price;
 
-        // clear all previously loaded variations & addon input radio & checkboxes 
+        // clear all previously loaded variations & addon input radio & checkboxes
         $(".variation-label").addClass("d-none");
         $("#variants").html("");
         $(".addon-label").addClass("d-none");
@@ -131,17 +133,18 @@ function addToCart(url, variant, qty, addons) {
                 let iopt = 0;
                 for (var key in variations) {
                     variants += `<div class="variation-label">
-                        <h5 class='text-capitalize'>${select} ${key.replace("_", " ")} **</h5>
+                        <h5 class='text-capitalize'>${select} ${key.replace("_", " ")} *</h5>
                     </div>`;
                     let options = variations[key];
                     for (let i = 0; i < options.length; i++) {
+                        let formattedPrice = new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(options[i].price);
                         variants += `<div class="form-check d-flex justify-content-between ${(i == (options.length - 1)) ? 'border-0' : ''}">
                             <div>
                                 <input class="form-check-input voptions" type="radio" name="${key}_variant" id="voption${iopt}" value="" data-option=${key} data-name="${options[i].name}" data-price="${options[i].price}" ${i == 0 ? 'checked' : ''}>
                                 <label class="form-check-label" for="voption${iopt}">${options[i].name}</label>
                             </div>
                             <span>
-                                + ${textPosition == 'left' ? currText : ''} ${options[i].price} ${textPosition == 'right' ? currText : ''}
+                                ${textPosition == 'left' ? currText : ''} ${formattedPrice} ${textPosition == 'right' ? currText : ''}
                             </span>
                         </div>`;
                         iopt++;
@@ -163,6 +166,7 @@ function addToCart(url, variant, qty, addons) {
                 // load addons checkbox input fields
                 let addonHtml = ``;
                 for (let i = 0; i < addons.length; i++) {
+                    let formattedPrice = new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(addons[i].price);
                     addonHtml += `<div class="form-check d-flex justify-content-between">
                         <div>
                             <input class="form-check-input" type="checkbox" name="addons" id="addon${i}" value="${addons[i].name}" data-price="${addons[i].price.toFixed(2)}">
@@ -171,7 +175,7 @@ function addToCart(url, variant, qty, addons) {
                             </label>
                         </div>
                         <span>
-                            + ${textPosition == 'left' ? currText : ''} ${addons[i].price} ${textPosition == 'right' ? currText : ''}
+                            + ${textPosition == 'left' ? currText : ''} ${formattedPrice} ${textPosition == 'right' ? currText : ''}
                         </span>
                     </div>`
                 }
@@ -194,10 +198,9 @@ function addToCart(url, variant, qty, addons) {
         }
 
     });
-    
+
     // ============== add to cart js end =======================//
-    
-    
+
     // ============== variation modal add to cart start =======================//
     $(document).on('click', '.modal-cart-link', function () {
         let $voptions = $("input.voptions:checked");
@@ -263,8 +266,8 @@ function addToCart(url, variant, qty, addons) {
         totalPrice($("input[name='cart-amount']").val());
     });
     // ============== variant change js end =======================//
-    
-    
+
+
     // ============== addon change js start =======================//
     $(document).on('change', '#addons input', function() {
         totalPrice($("input[name='cart-amount']").val());

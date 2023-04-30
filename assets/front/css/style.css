@@ -148,7 +148,7 @@ div#particles-js canvas {
     padding: 0 24px;
     font-size: 14px;
     line-height: 56px;
-    border-radius: 0px;
+    border-radius: 5px;
     color: #fff;
     cursor: pointer;
     z-index: 5;
@@ -164,11 +164,13 @@ div#particles-js canvas {
     .main-btn {
         font-size: 13px !important;
         padding: 0 18px;
+        border-radius: 5px;
     }
 
     .main-btn.main-btn-2 {
         font-size: 13px !important;
         padding: 0 18px;
+        border-radius: 5px;
     }
 }
 
@@ -4781,6 +4783,7 @@ h3.subscribe-title::after {
     border-radius: 5px;
     /*! float: left; */
     font-size: 14px;
+    border-radius: 5px;
 }
 
 .pricing-area .single-pricing a.main-btn:hover {
@@ -6764,6 +6767,7 @@ button.filter-button:hover {
     background-color: #01061f;
     border-color: #01061f;
     font-weight: 700;
+    border-radius: 5px;
 }
 
 .single-form .main-btn:hover {
@@ -8002,6 +8006,7 @@ p.gateway-desc {
     line-height: 28px;
     color: #000000;
     font-family: "Roboto", sans-serif;
+    border-radius: 5px;
 }
 
 .placeorder-button .main-btn:hover,
@@ -8378,6 +8383,7 @@ p.gateway-desc {
 .main-btn.main-btn-2.proceed-checkout-btn {
     height: 52px;
     line-height: 50px;
+    border-radius: 5px;
 }
 
 .main-btn.main-btn-2.proceed-checkout-btn:hover {
@@ -9698,6 +9704,7 @@ button.modal-cart-link i.fa-spinner,
 
     .popup-one .popup_main-content .main-btn {
         padding: 15px 30px;
+        border-radius: 5px;
     }
 
     .popup-three .popup_main-content .right-content,

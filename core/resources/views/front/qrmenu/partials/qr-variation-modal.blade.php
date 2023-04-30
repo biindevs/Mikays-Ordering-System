@@ -17,6 +17,7 @@
             </div>
             <div class="modal-body">
                 <div id="variants">
+                    tte
                     {{-- All variants will be appended here by jquery --}}
                 </div>
                 <div class="addon-label mt-3">

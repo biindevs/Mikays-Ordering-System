@@ -255,7 +255,6 @@ class ProductController extends Controller
                     $total += (float)$variation["price"];
                 }
             }
-            
             $total += (float)$cartItem["product_price"];
             $total = $total * $qtys[$i];
 
