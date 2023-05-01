@@ -29,7 +29,7 @@ Alternative installation is possible without local dependencies relying on [Dock
 
 Clone the repository
 
-    git clone https://github.com/biindevs/Mikays-Food-Ordering-System.git
+    git clone https://github.com/biindevs/Mikays-Ordering-System.git
 
 
 Switch to the repo folder
