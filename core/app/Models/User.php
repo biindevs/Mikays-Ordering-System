@@ -76,11 +76,17 @@ class User extends Authenticatable
 
     public function order_items()
     {
-      return $this->hasMany('App\Models\OrderItem');
+        return $this->hasMany('App\Models\OrderItem');
     }
 
     public function product_reviews()
     {
-      return $this->hasMany('App\Models\ProductReview');
+        return $this->hasMany('App\Models\ProductReview');
     }
+
+    public function coupon_usages()
+    {
+        return $this->hasMany('App\Models\CouponUsage');
+    }
+
 }

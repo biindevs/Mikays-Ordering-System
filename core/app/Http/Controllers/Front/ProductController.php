@@ -156,7 +156,6 @@ class ProductController extends Controller
     {
 
         $cart = Session::get('cart');
-        
         $data = explode(',,,', $id);
         $id = (int)$data[0];
         $qty = (int)$data[1];
@@ -422,26 +421,42 @@ class ProductController extends Controller
 
 
     public function coupon(Request $request) {
-        $coupon = Coupon::where('code', $request->coupon);
+        $couponQuery = Coupon::where('code', $request->coupon);
         $be = BasicExtended::first();
 
         if ($request->action == 'remove') {
             session()->forget('coupon');
+            session()->forget('coupon_id');
             return response()->json(['status' => 'success', 'message' => "Coupon removed successfully"]);
         }
-        if ($coupon->count() == 0) {
+        if ($couponQuery->count() == 0) {
             return response()->json(['status' => 'error', 'message' => "Coupon is not valid"]);
         } else {
-            $coupon = $coupon->first();
+            $coupon = $couponQuery->first();
+            $userId = Auth::user()->id;
+
+            // Check if the user has already used the coupon
+            $hasUsedCoupon = $coupon->coupon_usages()
+                                    ->where('user_id', $userId)
+                                    ->exists();
+
+            if ($hasUsedCoupon && $coupon->maximum_usage == 1) {
+                return response()->json(['status' => 'error', 'message' => "You have already used this coupon"]);
+            }
+
+            $totalRedemptions = $coupon->coupon_usages()->where('coupon_id', $coupon->id)->count();
+            if ($totalRedemptions >= $coupon->quantity) {
+                return response()->json(['status' => 'error', 'message' => "This voucher has reached its maximum redemption limit"]);
+            }
+
             if (cartTotal() < $coupon->minimum_spend) {
                 return response()->json(['status' => 'error', 'message' => "Order Total must be minimum " . $coupon->minimum_spend . " " . $be->base_currency_text]);
             }
+
             $start = Carbon::parse($coupon->start_date);
             $end = Carbon::parse($coupon->end_date);
             $today = Carbon::now();
-            // return response()->json($end->lessThan($today));
 
-            // if coupon is active
             if ($today->greaterThanOrEqualTo($start) && $today->lessThan($end)) {
                 $cartTotal = cartTotal();
                 $value = $coupon->value;
@@ -456,6 +471,7 @@ class ProductController extends Controller
                     $couponAmount = ($cartTotal * $value) / 100;
                 }
                 session()->put('coupon', round($couponAmount, 2));
+                session()->put('coupon_id', $coupon->id);
 
                 return response()->json(['status' => 'success', 'message' => "Coupon applied successfully"]);
             } else {

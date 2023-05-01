@@ -16,5 +16,13 @@ class Coupon extends Model
         'minimum_spend',
         'quantity',
         'maximum_usage',
+        'used',
+        'user_id',
     ];
+
+    public function coupon_usages()
+    {
+        return $this->hasMany('App\Models\CouponUsage');
+    }
+
 }

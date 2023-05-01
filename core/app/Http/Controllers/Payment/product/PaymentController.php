@@ -16,6 +16,8 @@ use App\Models\OrderItem;
 use App\Models\OrderTime;
 use App\Models\PaymentGateway;
 use App\Models\ProductOrder;
+use App\Models\Coupon;
+use App\Models\CouponUsage;
 use Carbon\Carbon;
 use Session;
 use Auth;
@@ -360,6 +362,19 @@ class PaymentController extends Controller
         }
 
         $order->save();
+
+        // Update the coupon's usage and create a new CouponUsage record
+        if (session()->has('coupon_id')) {
+            $coupon_id = session('coupon_id');
+            $coupon = Coupon::find($coupon_id);
+            if ($coupon) {
+                $couponUsage = new CouponUsage();
+                $couponUsage->user_id = Auth::check() ? Auth::user()->id : NULL;
+                $couponUsage->coupon_id = $coupon->id;
+                $couponUsage->save();
+            }
+            session()->forget('coupon_id'); // Remove the coupon_id from the session
+        }
 
 
         // store customer in `customers` table
