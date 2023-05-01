@@ -85,9 +85,9 @@
                                     @endif
                                 </div>
                             @endif
-                            <div class="col-md-12">
-                                <div class="single-form">
-                                    <button type="submit">{{__('Submit Now')}}</button>
+                            <div class="col-md-12 mt-2">
+                                <div class="placeorder-button">
+                                    <button class="main-btn" type="submit">{{__('Submit Now')}}</button>
                                 </div> <!-- single form -->
                             </div>
                         </div> <!-- row -->
@@ -110,7 +110,7 @@
                                 @endphp
                                 <ul>
                                     @foreach ($addresses as $address)
-                                        <li class="d-block mb-0">> {{convertUtf8($address)}}</li>
+                                        <li class="d-block mb-0">{{convertUtf8($address)}}</li>
                                     @endforeach
                                 </ul>
                             </div>
@@ -125,7 +125,7 @@
                                         $mails = explode(',', $bs->contact_mails);
                                     @endphp
                                     @foreach ($mails as $mail)
-                                        <li class="d-block mb-0">> {{$mail}}</li>
+                                        <li class="d-block mb-0">{{$mail}}</li>
                                     @endforeach
                                 </ul>
                             </div>
@@ -139,7 +139,7 @@
                                         $phones = explode(',', $bs->contact_number);
                                     @endphp
                                     @foreach ($phones as $phone)
-                                        <li class="d-block mb-0">> {{$phone}}</li>
+                                        <li class="d-block mb-0">{{$phone}}</li>
                                     @endforeach
                                 </ul>
                             </div>
